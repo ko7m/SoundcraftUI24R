@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Ui Selector">
+
+    <link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="40x40" href="AppIcon40x40.png">
+    <link rel="apple-touch-icon" sizes="80x80" href="AppIcon40x40@2x.png">
+    <link rel="apple-touch-icon" sizes="50x50" href="AppIcon50x50.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="AppIcon60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="AppIcon60x60@2x.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="AppIcon76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="AppIcon76x76@2x.png">
+
+    <meta name="description" content="Soundcraft Ui Digital Mixer Phone Web GUI"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+
+    <script type="text/javascript" src="sel/retina.js"></script>
+    <script type="text/javascript" src="js/initparams.js"></script>
+    <script type="text/javascript">
+        if (document.location.hash=="#local") document.location="/mixer.html#local";else
+        if (document.location.host=="127.0.0.1") document.location="/mixer.html#local";
+    </script>
+
+    <title>Soundcraft Ui</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: #18191c;
+    }
+    a {
+        text-decoration: none;
+        outline:none;
+    }
+    a img {
+        border: none;
+    }
+    a:focus, a:active, a:link {
+        outline: none;
+    }
+    #bg {
+        position: absolute;
+        /*        top: 0px;*/
+        /*        right: 0px;*/
+        /*        bottom: 0px;*/
+        /*        left: 0px;*/
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: #18191c;
+        background-image: -moz-radial-gradient(50% 5%, circle farthest-corner, #586d89, #18191c 100%);
+        background-image: -webkit-radial-gradient(50% 5%, circle farthest-corner, #586d89, #18191c 100%);
+        background-image: -o-radial-gradient(50% 5%, circle farthest-corner, #586d89, #18191c 100%);
+        background-image: -ms-radial-gradient(50% 5%, circle farthest-corner, #586d89, #18191c 100%);
+        background-image: radial-gradient(50% 5%, circle farthest-corner, #586d89, #18191c 100%)
+        /*        background-image: radial-gradient(circle farthest-corner at 50% 5%, #586D89, #18191c 100%);*/
+        /*        background: radial-gradient(50% 5%, circle cover, #586D89, #18191c 100%);*/
+    }
+    #logo {
+        position: relative;
+        /*        top: 9%;*/
+        margin-top: 5%;
+        text-align: center;
+        /*        margin-left: 45%;*/
+        /*        width: auto;*/
+        /*        margin-left: -202px;*/
+        /*        background: rgba(0, 0, 0, 0.1);*/
+    }
+    #mid {
+        position: relative;
+        margin-top: 7%;
+        /*        width: 60%;*/
+        /*        top: 60%;*/
+        /*        left: 50%;*/
+        /*        width: 100%;*/
+        /*        margin: -200px 0 0 -373px;*/
+        /*        background: rgba(0, 0, 0, 0.1);*/
+    }
+    #msg {
+        position: absolute;
+        display: none;
+        /*        bottom: 10%;*/
+        /*        left: 10%;*/
+        bottom: 5%;
+        left: 50%;
+        margin-left: -50%;
+        color: #eee;
+        font-family: "Arial";
+        font-size: 6mm;
+        /*        display: none;*/
+    }
+
+    #corner {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    #xx, #xx2 {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    @media screen and (max-width: 900px)  {
+        img {
+            width: 36%;
+            height: auto;
+        }
+        @media screen and (max-height: 250px)  {
+            img {
+                width: 25%;
+                height: auto;
+            }
+        }
+        #corner {        	
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    }
+
+    @media screen and (max-height: 550px)  {
+    	#corner {
+            width: 40%;
+            height: auto;
+        }
+        img {
+            width: 23%;
+            height: auto;
+        }
+    }
+</style>
+
+<body>
+    <div id="bg">
+        <div id="logo">
+            <img src="sel/SEL_LOGO_B_Ui.png" align="middle">
+        </div>
+        <div id="mid">
+            <a href="phone.html">
+                <img src="sel/SEL_PHONE.png" id="xx">
+            </a>
+            <a href="mixer.html">
+                <img src="sel/SEL_TABLET.png" id="xx2">
+            </a>
+        </div>
+
+        <!--<div id="msg">-->
+            <!--<h1>Use landscape orientation, please.</h1>-->
+        <!--</div>-->
+    </div>
+
+    <div id="corner">
+        <a href="config.html"><img src="sel/GEARS.png"></a>
+    </div>
+
+    <div id="warningwpa" onclick="warningClick();" style="cursor:pointer;visibility:hidden;position:absolute;width:100%;bottom:0px;text-align:center;padding-top:10px;padding-bottom:10px;font-family:sans,Arial,sans serif,Helvetica;color:#FFFFFF;background:rgba(0,0,0,0.5);">
+        Warning: This mixer's internal hotspot password is not set.<br/>
+        Anybody can join the wireless network and change mixer settings.
+    </div>
+
+    <script type="text/javascript">
+    <!--
+        function warningClick()
+        {
+            document.getElementById("warningwpa").style.visibility="hidden";
+        }
+
+        if (typeof staticInitDataArray=="function")
+        {
+            staticInitDataArray();
+
+            if (netConfig.ap_mode==0 && netConfig.ap_enabled)
+                document.getElementById("warningwpa").style.visibility="";
+        }
+    // -->
+    </script>
+</body>
+
+</html>
